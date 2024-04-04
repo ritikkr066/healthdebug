@@ -1,18 +1,36 @@
-import React from 'react';
+"use client"
+import React, { useState ,useEffect} from 'react';
 
-async function itemList(){
-    try {
-        const response=await fetch("https://healthdebug.vercel.app/api/users");
-        const data=await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-        return []
-    }
-}
+// async function itemList(){
+//     try {
+//         const response=await fetch("https://healthdebug.vercel.app/api/users");
+//         const data=await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error(error);
+//         return []
+//     }
+// }
+// async function itemList(){
+//     try {
+//         const response=await fetch("https://healthdebug.vercel.app/api/users");
+//         const data=await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error(error);
+//         return []
+//     }
+// }
 
-const page = async() => {
-    let items=await itemList();
+const page = () => {
+  const [dataa,setdataa]=useState([])
+  useEffect(()=>{
+    fetch("https://healthdebug.vercel.app/api/users").then(res=>res.json()).then((data)=>{
+      // setdataa(data)
+      console.log(data)
+      setdataa(data)
+    })
+  },[])
   return (
     <>
       <div>
@@ -20,9 +38,9 @@ const page = async() => {
         
         {
             
-            items && items.length>0?(
-            items.map((item)=>(
-                <div key={item.id}> {item.username}</div>
+            dataa && dataa.length>0?(
+            dataa.map((item)=>(
+                <div key={item._id}> {item.username}</div>
             ))
             ):<p>no items available</p>
         }
