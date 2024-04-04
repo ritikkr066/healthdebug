@@ -16,7 +16,7 @@ const Navbar = () => {
         <div>
             {/* mobile view */}
             <div className='max-sm:block max-md:hidden md:hidden'>
-                <div className='w-[100vw] h-[50px] bg-stone-700 flex justify-between px-3 fixed z-10 items-center'>
+                <div className='w-[100vw] h-[50px] bg-stone-700 flex justify-between px-3 fixed z-30 items-center'>
                     <span className='text-white font-bold'>Photogram</span>
                     <span className='ham-cross text-white  mt-1 text-xl' onClick={() => setclick(!click)}>
                         {
@@ -27,7 +27,7 @@ const Navbar = () => {
                         }
                     </span>
                 </div>
-                <div className={`fixed z-20 bg-black h-[100vh] w-[100vw] max-h-[100vh] overflow-hidden text-white ${click ? "visible" : "hidden"}`}>
+                <div className={`fixed z-40 bg-black h-[100vh] w-[100vw] max-h-[100vh] overflow-hidden text-white ${click ? "visible" : "hidden"}`}>
                     <RxCross2 className='absolute text-white right-3 top-5 text-3xl' onClick={() => { setclick(!click) }}></RxCross2>
                     <div className='flex flex-col justify-center items-center '>
                         <Link className='mt-8 text-2xl' href="/" onClick={() => setclick(!click)}>Home</Link>
