@@ -1,46 +1,30 @@
 "use client"
 import React, { useState ,useEffect} from 'react';
 
-// async function itemList(){
-//     try {
-//         const response=await fetch("https://healthdebug.vercel.app/api/users");
-//         const data=await response.json();
-//         return data;
-//     } catch (error) {
-//         console.error(error);
-//         return []
-//     }
-// }
-// async function itemList(){
-//     try {
-//         const response=await fetch("https://healthdebug.vercel.app/api/users");
-//         const data=await response.json();
-//         return data;
-//     } catch (error) {
-//         console.error(error);
-//         return []
-//     }
-// }
+async function itemList(){
+    try {
+        const response=await fetch("https://healthdebug.vercel.app/api/users");
+        // const response=await fetch("http://localhost:3000/api/users");
+        const data=await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return []
+    }
+}
 
-const Page = () => {
-  const [dataa,setdataa]=useState([])
-  useEffect(()=>{
-    fetch("https://healthdebug.vercel.app/api/users").then(res=>res.json()).then((data)=>{
-      // setdataa(data)
-      console.log(data)
-      setdataa(data)
-    })
-  },[])
+const page = async() => {
+    let items=await itemList();
   return (
     <>
       <div>
-        <h2>ItemList</h2>
+        <h2>UserList</h2>
         
         {
             
-            dataa && dataa.length>0?(
-            dataa.map((item)=>(
-                <div key={item._id}> {item.username}</div>
+            items && items.length>0?(
+            items.map((item)=>(
+                <div key={item.id}> {item.username}</div>
             ))
             ):<p>no items available</p>
         }
