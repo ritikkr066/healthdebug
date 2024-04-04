@@ -1,7 +1,7 @@
 // components/RegistrationForm.js
 "use client"
 import { useState } from 'react';
-
+import url from '../../env';
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     username: '',
@@ -30,13 +30,16 @@ const RegistrationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/users', {
+      console.log(process.env.BASE_API_URL)
+      const response = await fetch(`https://healthdebug.vercel.app/api/users`, {
+        // const response = await fetch('https://healthdebug-c9i38oh7l-ritikkr066s-projects.vercel.app/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
+     
       if (response.ok) {
         console.log('Registration successful');
         // Handle success, redirect user, etc.
