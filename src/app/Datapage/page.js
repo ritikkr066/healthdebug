@@ -18,7 +18,7 @@ const page = async() => {
   return (
     <>
       <div>
-        <h2>ItemList</h2>
+        <h2>UserList</h2>
         
         {
             
