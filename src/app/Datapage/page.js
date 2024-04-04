@@ -24,7 +24,7 @@ const page = async() => {
             
             items && items.length>0?(
             items.map((item)=>(
-                <div key={item.id}> {item.username}</div>
+                <div key={item._id}> {item.username}</div>
             ))
             ):<p>no items available</p>
         }
