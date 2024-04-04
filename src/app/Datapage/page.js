@@ -22,7 +22,7 @@ import React, { useState ,useEffect} from 'react';
 //     }
 // }
 
-const page = () => {
+const Page = () => {
   const [dataa,setdataa]=useState([])
   useEffect(()=>{
     fetch("https://healthdebug.vercel.app/api/users").then(res=>res.json()).then((data)=>{
@@ -49,4 +49,4 @@ const page = () => {
   );
 }
 
-export default page;
+export default Page;
