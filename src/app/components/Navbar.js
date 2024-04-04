@@ -33,7 +33,7 @@ const Navbar = () => {
                         <Link className='mt-8 text-2xl' href="/" onClick={() => setclick(!click)}>Home</Link>
                         <Link className='mt-8 text-2xl' href="/myposts" onClick={() => setclick(!click)}>My Posts</Link>
                         {/* <Link className='mt-8 text-2xl' href="/allposts" onClick={() => setclick(!click)}>All posts</Link> */}
-                        {
+                        {/* {
                             !savedtoken?
                             <>
                             <Link className='mt-8 text-2xl' href="/login" onClick={() => setclick(!click)}>Login</Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
                             </>
                             :
                             <Link className='mt-8 text-2xl' href="/login" onClick={()=>{localStorage.removeItem("token");location.startsWith("/");window.location.reload();setclick(!click)} }>logout</Link>
-                        }
+                        } */}
                         
                     </div>
                 </div>
@@ -54,11 +54,11 @@ const Navbar = () => {
                         <Link className='text-md md:text-lg px-2' href="/" >Home</Link>
                         <Link className='text-md md:text-lg px-2' href="/myposts" >My Posts</Link>
                     </div>
-                    <div className='flex text-white '>
+                    {/* <div className='flex text-white '>
                         <Link className={`text-md md:text-xl px-2 bg-white text-black rounded-full font-bold ${savedtoken?"block":"hidden"} `} href="/login" onClick={() => { localStorage.removeItem("token");localStorage.removeItem("id");location.startsWith("/login");window.location.reload() }} >Logout</Link>
                         <Link className={`text-md md:text-xl px-2 bg-white text-black rounded-full font-bold ${!savedtoken?"block":"hidden"} `} href="/login" >Login</Link>
                         <Link className={`text-md md:text-xl px-2 bg-white text-black rounded-full font-bold ${!savedtoken?"block":"hidden"} ml-3`} href="/signup" >Signup</Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
