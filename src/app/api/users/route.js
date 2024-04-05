@@ -38,11 +38,8 @@ export async function POST(request){
         console.log("creation->",error);
         return NextResponse.json({
             message:"failed to create user",
-            status:false
-        })
+            status:false,
+           
+        },{status:400})
     }
-   
-
-   
-
 }

@@ -71,7 +71,7 @@ const RegistrationForm = () => {
         className="w-full px-3 py-2 mb-3 border rounded-md"
       />
       <input
-        type="text"
+        type="number"
         name="phone"
         value={formData.phone}
         onChange={handleChange}
@@ -94,7 +94,7 @@ const RegistrationForm = () => {
         className="w-full px-3 py-2 mb-3 border-2 border-black rounded-md"
       ></textarea>
       <input
-        type="userid"
+        type="number"
         name="userid"
         value={formData.userid}
         onChange={handleChange}

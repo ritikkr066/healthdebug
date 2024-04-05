@@ -33,7 +33,8 @@ export async function POST(request){
         message:"Failed to create task!!",
         success:false,
        
-       }) 
+       
+       },{status:400}) 
     }
 }
 
