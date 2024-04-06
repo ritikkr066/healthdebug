@@ -31,7 +31,7 @@ const DoctorSchema=new mongoose.Schema({
         required:[true,"doctorid is required and must be unique"],
         unique: true
     },
-    phone:{
+    phoneno:{
         type: Number,
         required:[true,"Phone no of 10 digits"]
     },
@@ -39,4 +39,4 @@ const DoctorSchema=new mongoose.Schema({
 
 })
 
-export const Doctors=mongoose.models.doctorss || mongoose.model("doctorss",DoctorSchema)
+export const Doctors=mongoose.models.doctors || mongoose.model("doctors",DoctorSchema)
