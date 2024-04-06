@@ -24,8 +24,8 @@ const RegistrationForm = () => {
     e.preventDefault();
     try {
       console.log(process.env.BASE_API_URL)
-     fetch(`http://localhost:3000/api/users`, {
-      // const response = await fetch(`https://healthdebug.vercel.app/api/users`, {
+    //  fetch(`http://localhost:3000/api/users`, {
+   fetch(`https://healthdebug.vercel.app/api/users`, {
         // const response = await fetch('https://healthdebug-c9i38oh7l-ritikkr066s-projects.vercel.app/api/users', {
         method: 'POST',
         headers: {
