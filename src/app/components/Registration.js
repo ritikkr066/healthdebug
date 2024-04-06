@@ -1,10 +1,12 @@
 // components/RegistrationForm.js
 "use client"
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 // import url from '../../env';
 import { toast } from 'react-toastify';
 // import "./styles.css"
 const RegistrationForm = () => {
+  const router=useRouter()
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -23,25 +25,34 @@ const RegistrationForm = () => {
     e.preventDefault();
     try {
       console.log(process.env.BASE_API_URL)
-    //   const response = await fetch(`http://localhost:3000/api/users`, {
-      const response = await fetch(`https://healthdebug.vercel.app/api/users`, {
+     fetch(`http://localhost:3000/api/users`, {
+      // const response = await fetch(`https://healthdebug.vercel.app/api/users`, {
         // const response = await fetch('https://healthdebug-c9i38oh7l-ritikkr066s-projects.vercel.app/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      });
+      }).then(res=>res.json()).then((data)=>{
+        console.log(data)
+        if(data.success){
+          toast.success(data.message)
+          router.push("/login")
+        }else{
+          toast.error(data.message)
+        }
+      })
      
-      if (response.ok) {
-        console.log('Registration successful');
-        toast.success('registration successfull')
-        // Handle success, redirect user, etc.
-      } else {
-        console.error('Registration failed');
-        toast.error("something went wrong")
-        // Handle failure, show error message, etc.
-      }
+      // if (response.ok) {
+      //   console.log('Registration successful');
+      //   console.log(response)
+      //   // toast.success(data.message)
+      //   // Handle success, redirect user, etc.
+      // } else {
+      //   console.error('Registration failed');
+      //   // toast.error(data.message)
+      //   // Handle failure, show error message, etc.
+      // }
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error(error.msg)
