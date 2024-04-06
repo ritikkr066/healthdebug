@@ -22,7 +22,7 @@ export function middleware(request) {
   }else{
     //accessing secured  route
     if(!authToken){
-        return NextResponse.redirect(new URL('/login', request.url));
+        return NextResponse.redirect(new URL('/', request.url));
     }else{
         //verify ...
     }
@@ -33,8 +33,8 @@ export function middleware(request) {
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    '/',
-    '/login',
+    // '/',
+    // '/login',
     '/register',
     '/user-profile',
    "/Appointment",
