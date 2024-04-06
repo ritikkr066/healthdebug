@@ -1,19 +1,31 @@
-import Image from "next/image";
-
+import { IoPlay } from "react-icons/io5";
 export const metadata={
   title:"HealthDebug"
 }
 export default function Home() {
-  return (
-    <main className="border border-red-600 h-screen">
-        <div className={`mt-2 mb-2 border h-[90%] bg-[url('/appointmentDoc.jpg')] bg-cover`}>
-            <div className="border border-yellow-600 flex flex-col justify-center pl-48 h-full">
-              <div>We are hare for your care.</div>
-              <div>Best care &</div>
-              <div>Better Doctor.</div>
-              <div>In publishing and graphic design, Lorem ipsum (/ˌlɔː.rəm ˈɪp.səm/) is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider </div>
-              <div>hii</div>
-              <div>hii</div>
+  return ( 
+    <main className="h-screen">
+        <div className={`mb-2 h-[90%] bg-[url('/appointmentDoc.jpg')] bg-cover`}>
+            <div className="border flex flex-col justify-center pl-48 max-lg:pl-20  max-sm:pl-8 h-full">
+              <div className="text-slate-900 text-2xl mb-4">We are hare for your care.</div>
+              <div className="text-6xl font-bold text-slate-900 mb-2 max-sm:text-4xl">Best care &</div>
+              <div className="text-6xl font-bold text-slate-900 mb-4 max-sm:text-4xl">Better Doctor.</div>
+              <div className="w-[60%] max-sm:w-full mb-6">Imagine a world where healthcare meets innovation seamlessly. Welcome to our groundbreaking prototype designed to transform the medical field.</div>
+              <div className="flex">
+                <div className="border flex bg-blue-500 rounded-full p-2 w-80">
+                  <div className="w-10 h-10 bg-white rounded-full border flex justify-center mr-4">
+                    <div className="flex flex-col justify-center">+</div>
+                  </div>
+                  <div className="flex justify-center">
+                    <div className="flex flex-col justify-center text-white">Make Appointment</div>
+                  </div>
+                </div>
+                <div className="ml-8 flex flex-col justify-center">
+                  <div className="w-12 h-12 bg-green-500 rounded-full border flex justify-center mr-4">
+                    <div className="flex flex-col justify-center text-white"><IoPlay /></div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </main>
