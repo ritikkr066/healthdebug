@@ -21,10 +21,10 @@
 import Card from "../components/Card"
 async function itemList(){
     try {
-        // const response=await fetch("http://localhost:3000/api/doctor2");
+        const response=await fetch("http://localhost:3000/api/doctor2");
         // https://healthdebug.vercel.app/api/login
 
-        const response=await fetch("https://healthdebug.vercel.app/api/doctor2");
+        // const response=await fetch("https://healthdebug.vercel.app/api/doctor2");
        
         const data=await response.json();
         return data;
@@ -42,15 +42,25 @@ const page=async()=>{
         <>
             <div className="flex items-center justify-center w-full">
                 <div className="flex flex-wrap xl:grid xl:grid-cols-4  mt-20 w-[100vw] md:w-[700px] lg:w-[90vw] xl:w-[1300px] justify-center md:justify-start md:items-center items-center">
-                    {
+                    {/* {
                         items.map((item)=>{
                             return(
                                 <Card name={item.name} speciality={item.speciality} click={item._id} key={item._id}/>
                             )
                         })
-                    }
-                    
-                </div>
+                    } */}
+                    {
+            
+                    items && items.length>0?(
+                        items.map((item)=>(
+                            <div key={item._id}>
+                                 {/* {item.username}\ */}
+                                 <Card name={item.name} speciality={item.speciality} click={item._id} />
+                                 </div>
+                        ))
+                     ):<p>no items available</p>
+        }
+                     </div>
             </div>
         </>
     )
