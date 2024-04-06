@@ -17,7 +17,7 @@ export default function Home() {
                     <div className="flex flex-col justify-center">+</div>
                   </div>
                   <div className="flex justify-center">
-                    <div className="flex flex-col justify-center text-white">Make Appointment</div>
+                    <div className="flex flex-col justify-center text-white">A Med-Tech Nexus</div>
                   </div>
                 </div>
                 <div className="ml-8 flex flex-col justify-center">
