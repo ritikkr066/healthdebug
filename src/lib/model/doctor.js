@@ -8,7 +8,7 @@ const DoctorSchema=new mongoose.Schema({
     speciality:{
         type:String,
         required:[true],
-        unique: true
+       
     },
     experiance:{
         type: String,
@@ -39,4 +39,4 @@ const DoctorSchema=new mongoose.Schema({
 
 })
 
-export const Doctors=mongoose.models.doctors || mongoose.model("doctors",DoctorSchema)
+export const Doctors=mongoose.models.doctorss || mongoose.model("doctorss",DoctorSchema)
