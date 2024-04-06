@@ -2,6 +2,7 @@ import { connectionSrt } from "@/lib/db";
 import { User } from "@/lib/model/user";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs"
 
 
 export async function GET(request){
@@ -28,18 +29,22 @@ export async function POST(request){
     })
     try {
         //save the object to database
+        user.password= await bcrypt.hash(user.password,parseInt(process.env.BCRYPT_SALT));
+        console.log(user);
         const createdUser=await user.save();
 
-         const response=NextResponse.json(user,{
+         const response=NextResponse.json({
+            success:true,
+            message:"registration sucessfull"
+         },{
         status:201,
          }); 
         return response;
     } catch (error) {
         console.log("creation->",error);
         return NextResponse.json({
-            message:"failed to create user",
+            message:"userid must be unique",
             status:false,
-           
         },{status:400})
     }
 }
