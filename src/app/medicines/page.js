@@ -6,8 +6,8 @@ import MediCard from "../components/MediCard";
 const Page = () => {
     const [medicines , setMedicines] = useState([]);
     useEffect(()=>{
-        // axios.get('http://localhost:3000/api/medi')
-        axios.get('https://healthdebug.vercel.app/api/medi')
+        axios.get('http://localhost:3000/api/medi')
+        // axios.get('https://healthdebug.vercel.app/api/medi')
           .then(function (response) {
             setMedicines(response.data);
           })
