@@ -21,11 +21,11 @@
 import Card from "../components/Card"
 async function itemList(){
     try {
-        // const response=await fetch("http://localhost:3000/api/doctor1");
+        const response=await fetch("http://localhost:3000/api/doctor1");
         // https://healthdebug.vercel.app/api/login
 
-        const response=await fetch("https://healthdebug.vercel.app/api/doctor1");
-        // const response=await fetch("http://localhost:3000/api/users");
+        // const response=await fetch("https://healthdebug.vercel.app/api/doctor1");
+       
         const data=await response.json();
         return data;
     } catch (error) {
