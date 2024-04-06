@@ -27,11 +27,6 @@ const UserSchema=new mongoose.Schema({
     address:{
         type:String,
         required:[true,"Address is required"]
-    },
-    userid:{
-        type:Number,
-        required:[true,"userid is required and must be unique"],
-        unique: true
     }
 
 })

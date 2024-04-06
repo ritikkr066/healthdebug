@@ -5,8 +5,13 @@ export const metadata={
 }
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-24">
-        <div>Homepage</div>
+    <main className="pt-10">
+        <div className="max-sm:block max-md:hidden md:hidden">
+          sm
+        </div>
+        <div className="max-sm:hidden max-md:block md:block">
+          md
+        </div>
     </main>
   );
 }

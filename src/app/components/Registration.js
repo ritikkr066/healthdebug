@@ -13,7 +13,6 @@ const RegistrationForm = () => {
     phone: '',
     password: '',
     address: '',
-    userid: '',
   });
 
   const handleChange = (e) => {
@@ -104,14 +103,14 @@ const RegistrationForm = () => {
         placeholder="Address"
         className="w-full px-3 py-2 mb-3 border-2 border-black rounded-md"
       ></textarea>
-      <input
+      {/* <input
         type="number"
         name="userid"
         value={formData.userid}
         onChange={handleChange}
         placeholder="userid"
         className="w-full px-3 py-2 mb-3 border rounded-md"
-      />
+      /> */}
       <button type="submit" className="px-4 py-2 text-black bg-red-200 rounded-md">
         Register
       </button>

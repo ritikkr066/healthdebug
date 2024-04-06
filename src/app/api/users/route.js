@@ -21,13 +21,23 @@ export async function GET(request){
 
 export async function POST(request){
     //fetch user detail from request
-    const {username,email,phone,password,address,userid}= await request.json();
-
+    const {username,email,phone,password,address}= await request.json();
+    try {
+    const data=await User.findOne({email})
+    if(data){
+        const response=NextResponse.json({
+            success:false,
+            message:"email already registered"
+         },{
+        status:201,
+         }); 
+        return response;
+    }
     //create user object with  user model
    const user= new User({
-        username,email,phone,password,address,userid
+        username,email,phone,password,address
     })
-    try {
+    
         //save the object to database
         user.password= await bcrypt.hash(user.password,parseInt(process.env.BCRYPT_SALT));
         console.log(user);
@@ -40,11 +50,13 @@ export async function POST(request){
         status:201,
          }); 
         return response;
-    } catch (error) {
+    
+}catch (error) {
         console.log("creation->",error);
         return NextResponse.json({
             message:"userid must be unique",
             status:false,
         },{status:400})
     }
+
 }
