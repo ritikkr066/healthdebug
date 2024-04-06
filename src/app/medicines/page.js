@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import MediCard from "../components/MediCard";
 
-const page = () => {
+const Page = () => {
     const [medicines , setMedicines] = useState([]);
     useEffect(()=>{
         // axios.get('http://localhost:3000/api/medi')
@@ -24,4 +24,4 @@ const page = () => {
         </div>
     )
 }
-export default page
+export default Page
