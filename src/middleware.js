@@ -41,7 +41,7 @@ export const config = {
     '/register',
     '/user-profile',
    "/Appointment",
-    "/api/:path*",
+    // "/api/:path*",
 
 ]
 }
