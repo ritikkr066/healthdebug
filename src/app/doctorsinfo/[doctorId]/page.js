@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
+import Image from 'next/image';
 
 const page = ({params}) => {
     console.log(params.doctorId)
@@ -7,7 +8,7 @@ const page = ({params}) => {
     <div className="p-8 max-md:p-0 w-full bg-white border-8  border-r-blue-400 border-l-black border-b-black border-t-blue-600"> 
       <div className="grid grid-cols-5 max-sm:grid-cols-1 pb-8 ">
         <div className="border-b-2 border-l-2 mr-20 max-md:mr-2 max-sm:mr-0 border-blue-700 col-span-3">
-          <img className=' h-full' src='/doc.jpg' alt='doctor loading' />
+          <Image width={1000} height={1000} className='w-full h-full' src='/doc.jpg' alt='doctor loading' />
         </div>
         {/* Profile */}
         <div className="col-span-2 pt-8 pl-2">

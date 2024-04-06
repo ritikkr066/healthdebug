@@ -18,7 +18,7 @@ const Navbar = () => {
             {/* mobile view */}
             <div className='max-sm:block max-md:hidden md:hidden'>
                 <div className='w-[100vw] h-[50px] bg-blue-400 flex justify-between px-3 fixed z-30 items-center'>
-                    <Image width={250} height={90} src="/logoimg.png" className='h-[60%] w-[200px]'></Image>
+                    <Image width={250} height={90} src="/logoimg.png" className='h-[60%] w-[200px]' alt='logo..' />
                     <span className='ham-cross text-slate-700  mt-1 text-xl' onClick={() => setclick(!click)}>
                         {
                             click ?
@@ -50,16 +50,16 @@ const Navbar = () => {
             {/* laptop view */}
             <div className='max-sm:hidden max-md:block md:block'>
                 <div className='w-[100vw] h-[50px] bg-blue-400 flex justify-between px-3 fixed z-10 items-center'>
-                <Image width={200} height={90} src="/logoimg.png" className='h-[60%] w-[200px]'></Image>
+                <Image width={200} height={90} src="/logoimg.png" className='h-[60%] w-[200px]' alt='logo..'/>
                     <div className='flex text-white '>
                         <Link className='text-md md:text-lg px-2' href="/" >Home</Link>
                         <Link className='text-md md:text-lg px-2' href="/medicines" >Medicines</Link>
                         <Link className='text-md md:text-lg px-2' href="/doctorsinfo" >Doctors</Link>
                     </div>
                     <div className='flex text-white '>
-                        <Link className={`text-sm md:text-md px-2 bg-white text-green-400 rounded-full font-bold ${savedtoken?"block":"hidden"} `} href="/login" onClick={() => { localStorage.removeItem("token");localStorage.removeItem("id");location.startsWith("/login");window.location.reload() }} >Logout</Link>
-                        <Link className={`text-sm md:text-md px-2 bg-white text-green-400 rounded-full font-bold ${!savedtoken?"block":"hidden"} `} href="/login" >Login</Link>
-                        <Link className={`text-sm md:text-md px-2 bg-white text-green-400 rounded-full font-bold ${!savedtoken?"block":"hidden"} ml-3`} href="/signup" >Signup</Link>
+                        <Link className={`text-sm md:text-md px-4 py-2 bg-white hover:bg-slate-200 text-blue-400 rounded-full font-bold ${savedtoken?"block":"hidden"} `} href="/login" onClick={() => { localStorage.removeItem("token");localStorage.removeItem("id");location.startsWith("/login");window.location.reload() }} >Logout</Link>
+                        <Link className={`text-sm md:text-md px-4 py-2 bg-white hover:bg-slate-200 active:text-black text-blue-400 rounded-full font-bold ${!savedtoken?"block":"hidden"} `} href="/login" >Login</Link>
+                        <Link className={`text-sm md:text-md px-4 py-2 bg-white hover:bg-slate-200 active:text-black text-blue-400 rounded-full font-bold ${!savedtoken?"block":"hidden"} ml-3`} href="/register" >Signup</Link>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 const page = () => {
   const loading = false; // state mannagement
   if(loading){
@@ -68,7 +68,7 @@ const page = () => {
               <div className='col-span-2 border max-sm:mb-4 max-sm:mr-0  mr-2 bg-white flex justify-center pt-6 pb-6'>
                 <div className='flex flex-col justify-center space-y-2'>
                   <div className='flex justify-center'>
-                    <img className="w-40 h-40 flex flex-col justify-center rounded-full border border-black" src="" alt='loading..'/>
+                    <Image width={1000} height={1000} className="w-40 h-40 flex flex-col justify-center rounded-full border border-black" src="" alt='loading..'/>
                   </div>
                   <div className='flex justify-center font-semibold text-2xl'>John Doe</div>
                   <div className='flex justify-center text-slate-400 text-md'>Full Stack Developer</div>
