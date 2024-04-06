@@ -13,7 +13,6 @@ const RegistrationForm = () => {
     phone: '',
     password: '',
     address: '',
-    userid: '',
   });
 
   const handleChange = (e) => {
@@ -25,8 +24,8 @@ const RegistrationForm = () => {
     e.preventDefault();
     try {
       console.log(process.env.BASE_API_URL)
-     fetch(`http://localhost:3000/api/users`, {
-      // const response = await fetch(`https://healthdebug.vercel.app/api/users`, {
+    //  fetch(`http://localhost:3000/api/users`, {
+   fetch(`https://healthdebug.vercel.app/api/users`, {
         // const response = await fetch('https://healthdebug-c9i38oh7l-ritikkr066s-projects.vercel.app/api/users', {
         method: 'POST',
         headers: {
@@ -104,14 +103,14 @@ const RegistrationForm = () => {
         placeholder="Address"
         className="w-full px-3 py-2 mb-3 border-2 border-black rounded-md"
       ></textarea>
-      <input
+      {/* <input
         type="number"
         name="userid"
         value={formData.userid}
         onChange={handleChange}
         placeholder="userid"
         className="w-full px-3 py-2 mb-3 border rounded-md"
-      />
+      /> */}
       <button type="submit" className="px-4 py-2 text-black bg-red-200 rounded-md">
         Register
       </button>

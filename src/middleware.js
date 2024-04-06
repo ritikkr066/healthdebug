@@ -5,7 +5,8 @@ import { NextResponse } from 'next/server'
 export function middleware(request) {
     console.log("middleware used")
 //   return NextResponse.redirect(new URL('/login', request.url));
-  const authToken= request.cookies.get("authtoken")?.value;
+  const authToken= request.cookies.get("authToken")?.value;
+  console.log(authToken);
 
   if(request.nextUrl.pathname==="/api/login"){
     return;
@@ -17,23 +18,27 @@ export function middleware(request) {
     //accessing not secured route
     if(authToken){
          return NextResponse.redirect(new URL("/user-profile",request.url));
-    }else{
-        //accessing secured  route
-        if(!authToken){
-            return NextResponse.redirect(new URL('/login', request.url));
-        }else{
-            //verify ...
-        }
     }
-  }
-console.log(authToken)
+  }else{
+    //accessing secured  route
+    if(!authToken){
+        return NextResponse.redirect(new URL('/login', request.url));
+    }else{
+        //verify ...
+    }
+}
+// console.log(authtoken)
 }
  
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/user-profile',
+  matcher: [
+    '/',
+    '/login',
+    '/register',
+    '/user-profile',
    "/Appointment",
-    "/api/:path*",
+    // "/api/:path*",
 
 ]
 }

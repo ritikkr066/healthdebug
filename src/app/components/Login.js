@@ -61,7 +61,8 @@ const Login = () => {
       };
       const handleSubmit=(e)=>{
         e.preventDefault()
-        fetch("http://localhost:3000/api/login",{
+        // fetch("http://localhost:3000/api/login",{
+            fetch("https://healthdebug.vercel.app/api/login",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
