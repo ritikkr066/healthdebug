@@ -8,11 +8,20 @@ const Login = () => {
         password: ''
       });
       const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        // const { name, value } = e.target;
+        setFormData({ ...formData, [e.target.name]: e.target.value });
       };
       const handleSubmit=(e)=>{
         e.preventDefault()
+        fetch(`http://localhost:3000/api/login`,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(formData)
+        }).then(res=>res.json()).then((data)=>{
+            console.log(data)
+        })
             toast.success("clicked")
       }
     return (
