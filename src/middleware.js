@@ -1,6 +1,3 @@
-// export default function middleware(){
-//     console.log("middleware");
-// }
 
 import { NextResponse } from 'next/server'
  
